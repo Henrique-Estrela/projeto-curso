@@ -113,6 +113,7 @@ public class Projeto {
         Scanner scan = new Scanner(System.in);
         System.out.println("Digite 1 para cadastrar funcionario");
         System.out.println("Digite 2 para visualizar os clintes");
+        System.out.println("Digite 3 para redefinir a senha");
         String opcao = scan.nextLine();
         switch(opcao){
         case"1":
@@ -127,8 +128,16 @@ public class Projeto {
             gerente.cadastrarFuncionario(nome, cpf, senha, cargo);    
             break;
         case "2":
+            /*gerente.verOrdemDeServico();;*/
+            break;  
+            
+        case "3":
             gerente.visualizarCliente();
             break;
+            
+        case "4":
+            System.out.println("Opção em desenvolvimento!");
+            
         default:
             System.out.println("Opcao invalida");
             break;
@@ -138,9 +147,12 @@ public class Projeto {
 
     private static void telaMecanico(Mecanico mecanico) {
         Scanner scan = new Scanner(System.in);
-        System.out.println("Digite 1 para cadastrar Orçamento");
+        System.out.println("Digite 1 para cadastrar orçamento");
+        System.out.println("Digite 2 para visualizar a ordem de serviço");
+        System.out.println("Digite 3 para redefinir a senha");
         String opcao = scan.nextLine();
-        if(opcao.equals("1")){
+        switch(opcao){
+        case"1":
             System.out.println("Digite o cpfCliente");
             String cpfCliente = scan.nextLine();
             System.out.println("Digite o cpfMecanico");
@@ -150,13 +162,23 @@ public class Projeto {
             System.out.println("Digite o servico");
             String servico = scan.nextLine();
             mecanico.cadastrarOrcamento(cpfCliente, cpfMecanico, valor, servico);
-        }    }
+        case "2":
+            mecanico.verOrdenDeServico();
+            break;
+        case "3":
+            System.out.println("Opção em desenvolvimento!");
+        default:
+            System.out.println("Opcao invalida");
+            break;
+        }   
+    }
 
     private static void telaRecepcionista(Recepcionista recepcionista) {
         
         Scanner scan = new Scanner(System.in);
-        System.out.println("Digite 1 para cadastrar funcionario");
-        System.out.println("Digite 2 para visualizar os clintes");
+        System.out.println("Digite 1 para cadastrar Cliente");
+        System.out.println("Digite 2 para visualizar o orçamento");
+        System.out.println("Digite 3 para redefinir a senha");
         String opcao = scan.nextLine();
         switch(opcao){
         case"1":
@@ -170,11 +192,13 @@ public class Projeto {
             String placa = scan.nextLine();
             recepcionista.cadastrarCliente(email, telefone, endereco, placa);    
         
-        case"2":
-            
+        case"2":           
             recepcionista.verOrcamento();
             break;
-         
+            
+        case "3":
+            System.out.println("Opção em desenvolvimento!");
+            
         default:
             System.out.println("Opcao invalida");
             break;
