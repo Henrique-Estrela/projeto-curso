@@ -53,5 +53,8 @@ public class Orcamento {
     public void setServico(String servico) {
         this.servico = servico;
     }
-    
+@Override
+    public String toString() {
+        return "Orcamento{" + "cpfCliente=" + cpfCliente + ", cpfMecanico=" + cpfMecanico + ", valor=" + valor + ", servico=" + servico + '}';
+    }    
 }
