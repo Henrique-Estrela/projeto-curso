@@ -155,9 +155,11 @@ public class Projeto {
     private static void telaRecepcionista(Recepcionista recepcionista) {
         
         Scanner scan = new Scanner(System.in);
-        System.out.println("Digite 1 para cadastrar Cliente");
+        System.out.println("Digite 1 para cadastrar funcionario");
+        System.out.println("Digite 2 para visualizar os clintes");
         String opcao = scan.nextLine();
-        if(opcao.equals("1")){
+        switch(opcao){
+        case"1":
             System.out.println("Digite o email:");
             String email = scan.nextLine();
             System.out.println("Digite o telefone:");
@@ -166,9 +168,16 @@ public class Projeto {
             String endereco = scan.nextLine();
             System.out.println("Digite a sua placa:");
             String placa = scan.nextLine();
-            recepcionista.cadastrarCliente(email, telefone, endereco, placa);
+            recepcionista.cadastrarCliente(email, telefone, endereco, placa);    
+        
+        case"2":
             
+            recepcionista.verOrcamento();
+            break;
+         
+        default:
+            System.out.println("Opcao invalida");
+            break;
         }
     }
-    
-}
+    }
